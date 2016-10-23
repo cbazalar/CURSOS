@@ -1,0 +1,75 @@
+<html>
+
+<head>
+ <title>Directivas comunes</title>
+ <style type="text/css">
+     .error {
+       color: red;
+       background-color: yellow; 
+     }
+     
+     .bold {
+       font-weight: bold;
+     }
+     
+     div {
+       padding: 20 0 20 0
+     }
+ </style>
+</head>
+
+<body ng-app>
+  <div>ng-init</div>
+    <span ng-init ="persona = {nombre:'Carlos', apellido:'Bazalar'}; x = 5 "   >
+       {{ persona.nombre + " " + persona.apellido }}
+    </span>
+  
+  <div>ng-if</div>
+    <span ng-if="x>5"> X es numero mayor de 5</span>
+    <span ng-if="x<5"> X es numero menor de 5</span>
+    <span ng-if="x==5"> X es igual a 5</span>
+  
+  <div>ng-click</div>
+    <input type="button" value="incrementar" ng-click="contador = contador + 1" ng-init="contador = 0">
+    {{contador}}
+  
+  <div>ng-mouseOver</div>
+     <input type="button" value="incrementar" ng-mouseOver="contador2 = contador2 + 1" ng-init="contador2 = 0">
+    {{contador2}}
+    
+  <div>ng-dblclick</div>
+     <input type="button" value="incrementar" ng-dblclick="contador3 = contador3 + 1" ng-init="contador3 = 0">
+    {{contador3}}
+    
+  <div>ng-keypress</div>
+     <input type="text" ng-keypress="contador4 = contador4 + 1" ng-init="contador4 = 0">
+    {{contador4}}
+  
+  <div>ng-show ng-hide</div>
+    <input type="checkbox" ng-model="showModel" >
+    <br/>
+    <div ng-show="showModel">
+       Show Model esta habilitado
+    </div>
+    <div ng-hide="showModel">
+       Show Model esta deshabilitado
+    </div>
+    
+  <div ng-init ="listapersonas = [{nombre:'Carlos', pais: 'Peru'},
+                                  {nombre:'Pedro', pais: 'Colombia'},
+                                  {nombre:'Oscar', pais: 'Venezuela'}] ">ng-repeat</div>
+  <span ng-repeat="p in listapersonas">
+      {{ p.nombre + " es de " + p.pais }}
+      <br/>
+  </span>
+   
+     
+  <div>ng-class</div>
+  
+  <script src="js/angular.min.js"></script>
+  
+  
+</body>
+
+
+</html>
